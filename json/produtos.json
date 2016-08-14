@@ -1,0 +1,66 @@
+var listProdutos = [
+	{
+		"image":"vinho-01",
+		"titulo": "Cesta 01",
+		"nome":"Cesta de Café da Manhã Simples",
+		"descricao":"Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes Uma cesta de presentes ",
+		"componentes":"Componentes", 
+		"preco":50.00
+	},
+	{
+		"image":"office",
+		"titulo": "Cesta Simples 01",
+		"nome":"Cesta 01",
+		"descricao":"Uma cesta de presentes",
+		"componentes":"Componentes", 
+		"preco":50.00
+	},
+	{
+		"image":"office",
+		"titulo": "Cesta Simples 01",
+		"nome":"Cesta 01",
+		"descricao":"Uma cesta de presentes",
+		"componentes":"Componentes", 
+		"preco":50.00
+	},
+	{
+		"image":"office",
+		"titulo": "Cesta Simples 01",
+		"nome":"Cesta 01",
+		"descricao":"Uma cesta de presentes",
+		"componentes":"Componentes", 
+		"preco":50.00
+	},
+	{
+		"image":"office",
+		"titulo": "Cesta Simples 01",
+		"nome":"Cesta 01",
+		"descricao":"Uma cesta de presentes",
+		"componentes":"Componentes", 
+		"preco":50.00
+	},
+	{
+		"image":"office",
+		"titulo": "Cesta Simples 01",
+		"nome":"Cesta 01",
+		"descricao":"Uma cesta de presentes",
+		"componentes":"Componentes", 
+		"preco":50.00
+	},
+	{
+		"image":"office",
+		"titulo": "Cesta Simples 01",
+		"nome":"Cesta 01",
+		"descricao":"Uma cesta de presentes",
+		"componentes":"Componentes", 
+		"preco":50.00
+	},
+	{
+		"image":"office",
+		"titulo": "Cesta Simples 01",
+		"nome":"Cesta 01",
+		"descricao":"Uma cesta de presentes",
+		"componentes":"Componentes", 
+		"preco":50.00
+	},
+];
