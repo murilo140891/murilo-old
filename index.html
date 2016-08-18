@@ -84,33 +84,45 @@
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="js/materialize.js"></script>
 	<script src="js/init.js"></script>
+	<script src="js/mmd.js"></script>
 
 	<script>
-		htmlProdutos = "";
+		htmlProdutos = `<div class="row">`;
 
 		for (var i = 0; i < listProdutos.length; i++) {
-			htmlProdutos += 
-				`<div class="col s4">
-					<div class="card medium sticky-action">
-						<div class="card-image waves-effect waves-block waves-light">
-							<img class="activator" src="images/${listProdutos[i].image}.jpg">
+			htmlProdutos += `
+				<div class="col s4">
+					<div class="card hoverable modal-trigger" data-target="modal${i}" style="cursor:pointer;">
+						<div class="card-image">
+							<img class="responsive-img" src="images/vinho-01.jpg">
+							<span class="card-title">
+								<h4 class="flow-text">${listProdutos[i].titulo}</h4>
+							</span>
 						</div>
-						<div class="card-content">
-							<span class="card-title activator grey-text text-darken-4">${listProdutos[i].titulo}<i class="material-icons right">more_vert</i></span>
-						</div>
-						<div class="card-action">
-							${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(listProdutos[i].preco)}
-        				</div>
-						<div class="card-reveal">
-							<span class="card-title grey-text text-darken-4">${listProdutos[i].nome}<i class="material-icons right">close</i></span>
-							<p>${listProdutos[i].descricao}</p>
-						</div>
+					</div>
+				</div>
+
+				<div id="modal${i}" class="modal">
+					<div class="modal-content">
+						<h4>${listProdutos[i].titulo}</h4>
+						${mmd(listProdutos[i].descricao)}
+					</div>
+					<div class="modal-footer">
+						<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
 					</div>
 				</div>`
 			;
 		}
 
+		htmlProdutos += `</div>`;
+
 		document.getElementById("div-produtos").innerHTML = htmlProdutos;
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			$('.modal-trigger').leanModal();
+		});
 	</script>
 
 	</body>
