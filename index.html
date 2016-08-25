@@ -7,22 +7,14 @@
 
 	<!-- CSS  -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel="stylesheet">
 	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-	<script type="text/javascript" src="json/produtos.json"></script>
+	<script type="text/javascript" src="data/produtos.js"></script>
 </head>
 <body>
 	<nav class="brown lighten-1" role="navigation">
-		<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Cacau Show</a>
-			<ul class="right hide-on-med-and-down">
-				<li><a href="#">Navbar Link</a></li>
-			</ul>
-
-			<ul id="nav-mobile" class="side-nav">
-				<li><a href="#">Navbar Link</a></li>
-			</ul>
-			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+		<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Tami Presentes</a>
 		</div>
 	</nav>
 
@@ -34,47 +26,21 @@
 			<div id="div-produtos" class="row">
 				<!--   Produtos   -->
 			</div>
-
-		</div>
-		<br><br>
-
-		<div class="section">
-
 		</div>
 	</div>
 
-	<footer class="page-footer orange">
+	<footer class="page-footer brown">
 		<div class="container">
 			<div class="row">
 				<div class="col l6 s12">
-					<h5 class="white-text">Company Bio</h5>
-					<p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-				</div>
-				<div class="col l3 s12">
-					<h5 class="white-text">Settings</h5>
-					<ul>
-						<li><a class="white-text" href="#!">Link 1</a></li>
-						<li><a class="white-text" href="#!">Link 2</a></li>
-						<li><a class="white-text" href="#!">Link 3</a></li>
-						<li><a class="white-text" href="#!">Link 4</a></li>
-					</ul>
-				</div>
-				<div class="col l3 s12">
-					<h5 class="white-text">Connect</h5>
-					<ul>
-						<li><a class="white-text" href="#!">Link 1</a></li>
-						<li><a class="white-text" href="#!">Link 2</a></li>
-						<li><a class="white-text" href="#!">Link 3</a></li>
-						<li><a class="white-text" href="#!">Link 4</a></li>
-					</ul>
+					<h5 class="white-text">Informações</h5>
+					<p class="grey-text text-lighten-4">
 				</div>
 			</div>
 		</div>
 		<div class="footer-copyright">
 			<div class="container">
-			Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+			
 			</div>
 		</div>
 	</footer>
@@ -82,40 +48,41 @@
 
 	<!--  Scripts-->
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="js/materialize.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 	<script src="js/init.js"></script>
 	<script src="js/mmd.js"></script>
 
 	<script>
 		htmlProdutos = `<div class="row">`;
-
 		for (var i = 0; i < listProdutos.length; i++) {
 			htmlProdutos += `
-				<div class="col s4">
+				<div class="col l3 s6">
 					<div class="card hoverable modal-trigger" data-target="modal${i}" style="cursor:pointer;">
 						<div class="card-image">
-							<img class="responsive-img" src="images/vinho-01.jpg">
+							<img class="responsive-img" src=${listProdutos[i].image}>
 							<span class="card-title">
-								<h4 class="flow-text">${listProdutos[i].titulo}</h4>
+								<h4 class="flow-text" style="
+								text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+                font-weight: bold;">
+                  ${listProdutos[i].titulo}
+                </h4>
 							</span>
 						</div>
 					</div>
 				</div>
-
-				<div id="modal${i}" class="modal">
+				<div id="modal${i}" class="modal modal-fixed-footer flow-text">
 					<div class="modal-content">
 						<h4>${listProdutos[i].titulo}</h4>
 						${mmd(listProdutos[i].descricao)}
 					</div>
 					<div class="modal-footer">
-						<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
+						<a href="#!" class="modal-action modal-close waves-effect waves-brown btn-flat">Fechar</a>
+						<a href="#!" class="modal-action waves-effect waves-brown btn-flat">${listProdutos[i].preco}</a>
 					</div>
 				</div>`
 			;
 		}
-
 		htmlProdutos += `</div>`;
-
 		document.getElementById("div-produtos").innerHTML = htmlProdutos;
 	</script>
 
